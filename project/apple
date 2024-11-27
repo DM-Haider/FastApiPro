@@ -1,0 +1,18 @@
+# import cryptocode
+# password = 'ali'
+# token = cryptocode.encrypt(password, 'mycode')
+# myDecryptedMessage = cryptocode.decrypt("/tKH*YZf8Lured9r7oaXmViNiPg==*P7IX5oNbGrdfIIf7L14+iQ==*ctUfbCX0TfSpKShmADAbSA==" , "mycode")
+# myDecryptedMessage2 = cryptocode.decrypt("K+qa*MrRQg4tUCpQ/DHBPvyhY/Q==*J7bnvxiUamPNfIU6dE8rAg==*qgFv0ugIz4ZJWryY9cNj/A==" , "mycode")
+# print(token)
+# print(myDecryptedMessage)
+# print(myDecryptedMessage2)
+
+
+num1 = 5
+num2 = 3
+def test(num1=num2):
+    print(num1)
+    print(num2)
+    print('yes')
+
+ali = test()

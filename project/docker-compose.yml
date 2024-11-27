@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  fast-api:
+    image: dmhaider/project-fast-api 
+    container_name: fa-project
+    ports:
+      - '8000:8000'

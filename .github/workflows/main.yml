@@ -15,6 +15,7 @@ jobs:
 
       - name: run docker compose
         run : |
+          cd /project
           docker compose up
         
 

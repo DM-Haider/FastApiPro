@@ -1,0 +1,21 @@
+name: project running
+
+on:
+  push:
+    branches:
+      -main
+
+jobs:
+  docker_running:
+    name: run via docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: code checkout
+        uses: actions/checkout@v3
+
+      - name: run docker compose
+        run : |
+          docker compose up
+        
+
+    

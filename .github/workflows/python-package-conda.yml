@@ -16,7 +16,7 @@ jobs:
 
       - name: run docker compose
         run : |
-          cd "/home/dhaider/Documents/fast api project/FastApiPro/project"
+
           docker compose up
           sleep 10 # Wait for the server to start
           curl --fail http://localhost:8000 # Test the app

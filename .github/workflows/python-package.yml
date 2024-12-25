@@ -16,6 +16,7 @@ jobs:
       - name: Build Docker Image
         run: |
           echo "Building Docker Image..."
+          cd "/home/dhaider/Documents/fast api project/FastApiPro/project"
           docker build -t fastapi-ci-cd-app:latest .
 
   test:

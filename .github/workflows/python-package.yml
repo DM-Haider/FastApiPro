@@ -26,6 +26,7 @@ jobs:
       - name: Push Docker Image
         run: docker push "${{ secrets.DOCKER_USERNAME }}/fastapi-ci-cd-app:latest"
 
+        
 
   deploy:
     name: Deploy Application

@@ -14,10 +14,12 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build Docker Image
+        working-directory: ./project
         # working-directory: "/home/dhaider/Documents/fast api project/FastApiPro/project"
         run: |
           echo "Building Docker Image..."
-          cd .. && cd "/project" && docker build -t fastapi-ci-cd-app:latest .
+          docker build -t fastapi-ci-cd-app:latest .
+        # cd .. && cd "/project" && docker build -t fastapi-ci-cd-app:latest .
 
   test:
     name: Run Tests

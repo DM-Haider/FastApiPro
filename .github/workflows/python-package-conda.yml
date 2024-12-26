@@ -1,6 +1,9 @@
 name: project running
 
-on: [push]
+on:
+  push:
+    branches:
+      - def
 
 
 jobs:

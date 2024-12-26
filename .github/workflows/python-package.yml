@@ -15,7 +15,7 @@ jobs:
 
       - name: Build Docker Image
         working-directory: ./project
-        # working-directory: "/home/dhaider/Documents/fast api project/FastApiPro/project"
+
         run: |
           echo "Building Docker Image..."
           docker build -t "${{ secrets.DOCKER_USERNAME }}"/fastapi-ci-cd-app:latest .
@@ -25,7 +25,6 @@ jobs:
 
       - name: Push Docker Image
         run: docker push "${{ secrets.DOCKER_USERNAME }}/fastapi-ci-cd-app:latest"
-        # cd .. && cd "/project" && docker build -t fastapi-ci-cd-app:latest .
 
 
   deploy:

@@ -18,7 +18,7 @@ jobs:
         # working-directory: "/home/dhaider/Documents/fast api project/FastApiPro/project"
         run: |
           echo "Building Docker Image..."
-          docker build -t fastapi-ci-cd-app:latest .
+          docker build -t "${{ secrets.DOCKER_USERNAME }}"/fastapi-ci-cd-app:latest .
         # cd .. && cd "/project" && docker build -t fastapi-ci-cd-app:latest .
 
   # test:
@@ -60,9 +60,12 @@ jobs:
           echo "Stopping and removing any existing container..."
           docker rm -f fastapi-app-container || true
 
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
       - name: Deploy Application
         working-directory: ./project
         run: |
           echo "Deploying Application..."
-          docker run -d --name fastapi-app-container -p 8000:8000 fastapi-ci-cd-app:latest
+          docker run -d --name fastapi-app-container -p 8000:8000 "${{ secrets.DOCKER_USERNAME }}"/fastapi-ci-cd-app:latest
           echo "Application deployed successfully and is running on http://localhost:8000"

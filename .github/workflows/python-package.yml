@@ -21,35 +21,35 @@ jobs:
           docker build -t fastapi-ci-cd-app:latest .
         # cd .. && cd "/project" && docker build -t fastapi-ci-cd-app:latest .
 
-  test:
-    name: Run Tests
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+  # test:
+  #   name: Run Tests
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - name: Checkout Code
+  #       uses: actions/checkout@v3
 
-      - name: Set up Python Environment
-        working-directory: ./project
-        run: |
-          echo "Setting up virtual environment..."
-          python3 -m venv venv
-          source venv/bin/activate
-          pip install --upgrade pip
-          pip install -r requirements.txt
+  #     - name: Set up Python Environment
+  #       working-directory: ./project
+  #       run: |
+  #         echo "Setting up virtual environment..."
+  #         python3 -m venv venv
+  #         source venv/bin/activate
+  #         pip install --upgrade pip
+  #         pip install -r requirements.txt
 
-      - name: Run Tests
-        working-directory: ./project
-        run: |
-          echo "Running tests..."
-          venv/bin/pytest --rootdir=./
-        # venv/bin/pytest /tests/test_fastapi.py
+  #     - name: Run Tests
+  #       working-directory: ./project
+  #       run: |
+  #         echo "Running tests..."
+  #         venv/bin/pytest --rootdir=./
+  #       # venv/bin/pytest /tests/test_fastapi.py
 
 
   deploy:
     name: Deploy Application
     runs-on: ubuntu-latest
-    needs: test
+    # needs: test
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3

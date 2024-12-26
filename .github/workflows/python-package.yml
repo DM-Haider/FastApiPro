@@ -42,7 +42,7 @@ jobs:
         working-directory: ./project
         run: |
           echo "Running tests..."
-          venv/bin/pytest ./project/main.py
+          venv/bin/pytest main.py
 
   deploy:
     name: Deploy Application

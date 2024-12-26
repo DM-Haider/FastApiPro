@@ -5,6 +5,7 @@ sqlalchemy
 uvicorn
 pydantic
 cryptocode
+httpx
 # annotated-types==0.7.0
 # ansible-base==2.10.8
 # anyio==4.4.0

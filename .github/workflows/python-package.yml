@@ -45,7 +45,6 @@ jobs:
   #         venv/bin/pytest --rootdir=./
   #       # venv/bin/pytest /tests/test_fastapi.py
 
-
   deploy:
     name: Deploy Application
     runs-on: ubuntu-latest
